@@ -12,12 +12,12 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 public class Robot extends TimedRobot {
-  VictorSPX leftMotor1 = new VictorSPX(0);
-  VictorSPX leftMotor2 = new VictorSPX(1);
-  VictorSPX rightMotor1 = new VictorSPX(2);
-  VictorSPX rightMotor2 = new VictorSPX(3);
-  TalonSRX fireMotor1 = new TalonSRX(4);
-  TalonSRX fireMotor2 = new TalonSRX(5);
+  VictorSPX leftMotorF = new VictorSPX(0);
+  VictorSPX leftMotorB = new VictorSPX(1);
+  VictorSPX rightMotorF = new VictorSPX(2);
+  VictorSPX rightMotorB = new VictorSPX(3);
+  TalonSRX fireMotorR = new TalonSRX(4);
+  TalonSRX fireMotorL = new TalonSRX(5);
   Joystick joy1 = new Joystick(0);
 
   public void arcade() {
