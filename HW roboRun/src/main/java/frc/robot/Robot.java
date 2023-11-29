@@ -12,12 +12,12 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 public class Robot extends TimedRobot {
-  VictorSPX leftMotor1 = new VictorSPX(0);
-  VictorSPX leftMotor2 = new VictorSPX(1);
-  VictorSPX rightMotor1 = new VictorSPX(2);
-  VictorSPX rightMotor2 = new VictorSPX(3);
-  TalonSRX fireMotor1 = new TalonSRX(4);
-  TalonSRX fireMotor2 = new TalonSRX(5);
+  VictorSPX leftMotorF = new VictorSPX(0);
+  VictorSPX leftMotorB = new VictorSPX(1);
+  VictorSPX rightMotorF = new VictorSPX(2);
+  VictorSPX rightMotorB = new VictorSPX(3);
+  TalonSRX fireMotorR = new TalonSRX(4);
+  TalonSRX fireMotorL = new TalonSRX(5);
   Joystick joy1 = new Joystick(0);
 
   public void arcade() {
@@ -28,10 +28,10 @@ public class Robot extends TimedRobot {
     double right = speed - turn;
     double left = speed + turn;
 
-    leftMotor1.set(ControlMode.PercentOutput, left);
-    leftMotor2.set(ControlMode.PercentOutput, left);
-    rightMotor1.set(ControlMode.PercentOutput, -right);
-    rightMotor2.set(ControlMode.PercentOutput, -right);
+    leftMotorF.set(ControlMode.PercentOutput, left);
+    leftMotorB.set(ControlMode.PercentOutput, left);
+    rightMotorF.set(ControlMode.PercentOutput, -right);
+    rightMotorB.set(ControlMode.PercentOutput, -right);
 
   }
 
@@ -42,20 +42,20 @@ public class Robot extends TimedRobot {
 
     if (buttonA) 
     {
-      fireMotor1.set(ControlMode.PercentOutput, 1);
-      fireMotor2.set(ControlMode.PercentOutput, -1);
+      fireMotorR.set(ControlMode.PercentOutput, 1);
+      fireMotorL.set(ControlMode.PercentOutput, -1);
     }
 
     else if (buttonM) 
     {
-      fireMotor1.set(ControlMode.PercentOutput, -0.5);
-      fireMotor2.set(ControlMode.PercentOutput, 0.5);
+      fireMotorR.set(ControlMode.PercentOutput, -0.5);
+      fireMotorL.set(ControlMode.PercentOutput, 0.5);
     }
 
     else 
     {
-      fireMotor1.set(ControlMode.PercentOutput, 0);
-      fireMotor2.set(ControlMode.PercentOutput, 0);
+      fireMotorR.set(ControlMode.PercentOutput, 0);
+      fireMotorL.set(ControlMode.PercentOutput, 0);
     }
 
   }
